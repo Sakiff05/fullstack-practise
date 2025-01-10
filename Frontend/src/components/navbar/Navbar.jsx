@@ -5,7 +5,7 @@ import { NavLink } from "react-router";
 
 export default function Navbar() {
   return (
-    <nav className=" py-2  ">
+    <nav className=" py-2 fixed z-10 w-full bg-white shadow ">
       <div className="top flex flex-col sm:flex-row justify-between items-center px-20  ">
         <div className="top-text">
           <p>We believe we helps people</p>

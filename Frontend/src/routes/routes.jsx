@@ -30,6 +30,10 @@ const ROUTES = [
         path: "details/:id",
         element: <Details />,
       },
+      {
+        path: "favorites/details/:id",
+        element: <Details />,
+      },
     ],
   },
 ];

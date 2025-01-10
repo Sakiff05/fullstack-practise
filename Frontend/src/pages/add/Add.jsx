@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddSchema = Yup.object().shape({
   title: Yup.string()
@@ -23,9 +24,17 @@ const AddSchema = Yup.object().shape({
 
 export default function Add() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <div className="py-10 bg-rose-500 h-[89.7vh]">
-      {/* <button onClick={() => navigate(`/`)}>Go Back</button> */}
+      <Helmet>
+        <title>Add card</title>
+        <meta name="description" content="add page" />
+      </Helmet>
 
       <div className="flex flex-col items-center justify-center h-full">
         <h1 className="text-5xl text-white text-center my-10">ADD FORM</h1>
