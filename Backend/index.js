@@ -56,8 +56,6 @@ app.listen("5000", () => {
   console.log("Listening at port 5000");
 });
 
-mongoose
-  .connect("mongodb+srv://sakifcfaf206:sakif@immigration.qghuw.mongodb.net/")
-  .then(() => {
-    console.log("connected to mongodb");
-  });
+mongoose.connect(process.env.ConnectionString).then(() => {
+  console.log("connected to mongodb");
+});

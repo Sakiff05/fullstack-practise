@@ -18,7 +18,7 @@ export default function Favorite() {
       </Helmet>
 
       {favorite.length == 0 ? (
-        <h1 className="pt-40 text-center text-4xl">
+        <h1 className="py-80 text-center text-4xl">
           You have nothing in your favorites
         </h1>
       ) : (
