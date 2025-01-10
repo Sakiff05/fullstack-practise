@@ -1,4 +1,5 @@
 import Add from "../pages/add/Add";
+import Details from "../pages/details/Details";
 import Favorite from "../pages/favorite/Favorite";
 import Home from "../pages/home/Home";
 import NotFound from "../pages/NotFound";
@@ -24,6 +25,10 @@ const ROUTES = [
       {
         path: "*",
         element: <NotFound />,
+      },
+      {
+        path: "details/:id",
+        element: <Details />,
       },
     ],
   },

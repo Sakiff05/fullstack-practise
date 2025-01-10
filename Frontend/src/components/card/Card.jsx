@@ -1,10 +1,14 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2"
 
 export default function Card({ card, data, setData }) {
 
-  function handleDelete(id) {
+const navigate =useNavigate()
+
+  function handleDelete(id,e) {
+    e.stopPropagation()
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -29,7 +33,7 @@ export default function Card({ card, data, setData }) {
   }
 
   return (
-    <div className="card">
+    <div className="card w-full cursor-pointer" onClick={()=>navigate(`details/${card._id}`)}>
       <div className="imgWrapper">
         <img src={`${card.image}`} alt="" className="w-full" />
       </div>
@@ -37,7 +41,7 @@ export default function Card({ card, data, setData }) {
         <span className="bg-black text-white p-2 ">{card.country}</span>
         <p className="font-bold">{`${card.description.slice(0, 40)}...`}</p>
       </div>
-      <button className="border border-rose-400 rounded p-2 bg-rose-400 mt-5  hover:bg-rose-300 text-white text-xl" onClick={()=>handleDelete(card._id)} >
+      <button className="border border-rose-400 rounded p-2 bg-rose-400 mt-5  hover:bg-rose-300 text-white text-xl" onClick={(e)=>handleDelete(card._id,e)} >
         DELETE
       </button>
     </div>
