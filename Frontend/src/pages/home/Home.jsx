@@ -3,6 +3,7 @@ import Hero from "../../components/hero/Hero";
 import Requierments from "../../components/requierments/Requierments";
 import Features from "../../components/features/Features";
 import { Helmet } from "react-helmet-async";
+import LatestNews from "../../components/latestNews/LatestNews";
 
 export default function Home() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <Requierments />
       <Features />
+      <LatestNews />
     </>
   );
 }
